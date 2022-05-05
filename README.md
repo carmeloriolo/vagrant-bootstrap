@@ -36,6 +36,10 @@ Destroy target machine:
 ```/bin/sh
 export VG_MACHINE_CONFIG_PATH=$(pwd)/machines/target.yaml; vagrant destroy
 ```
+Connect:
+```/bin/sh
+export VG_MACHINE_CONFIG_PATH=$(pwd)/machines/target.yaml; vagrant ssh
+```
 
 ## Provisioners
 Provisioners can be found in *scripts* and *playbooks* directories. For each provisioner a related key can be set within the machine's yaml configuration file. So for example in the case of Docker, this can be easily installed by setting:
