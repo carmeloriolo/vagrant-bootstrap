@@ -1,4 +1,4 @@
-# Vagrant bootstrap
+# Vagrant bootstrap 🚀🚀
 
 I personally created this setup to have a way to easily provide my Vagrant boxes without creating a new Vagrantfile each time. Now providing a new machine is just simpe as putting a *yaml* file within the *machine* directory.
 
