@@ -23,13 +23,15 @@ Vagrant.configure("2") do |config|
     vb.name = configs['name']
     # Display the VirtualBox GUI when booting the machine
     vb.gui = false
-
     # Customize the amount of memory on the VM:
     vb.memory = configs['memory']
     vb.cpus = configs['cpus']
   end
 
-  config.vm.synced_folder "~/Dev", "/home/vagrant/dev"
+  configs['shared_mounts'].each do |mount|
+    config.vm.synced_folder mount['from'], mount['to']
+  end
+
 
   # Bootstrap
   config.vm.provision "bootstrap", type: "ansible" do |ansible|

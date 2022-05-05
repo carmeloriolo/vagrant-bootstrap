@@ -6,7 +6,10 @@ configs:
   scripts_prefix: './scripts'
   memory: 4096
   cpus: 2
-  install_go: never
-  install_docker: never
+  install_go: always
+  install_docker: always
   install_kubeadm: never
   go_version: 1.17.9
+  shared_mounts:
+    - from: "~/Dev"
+      to: "/home/vagrant/dev"
