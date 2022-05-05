@@ -1,0 +1,25 @@
+---
+- name: Install Docker
+  become: true
+  hosts: all
+  tasks:
+    - name: "Install Docker as runtime environment"
+      ansible.builtin.apt:
+        name:
+          - docker.io
+        state: present
+        update_cache: true
+
+    - name: "Set docker cgroup to systemd"
+      copy:
+        dest: "/etc/docker/daemon.json"
+        content: |
+          {
+            "exec-opts": [ "native.cgroupdriver=systemd" ]
+          }
+
+    - name: "Enable docker service"
+      ansible.builtin.systemd:
+        name: docker
+        enabled: yes
+        masked: no

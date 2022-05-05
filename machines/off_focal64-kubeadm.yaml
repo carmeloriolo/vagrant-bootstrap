@@ -1,0 +1,14 @@
+---
+configs:
+  name: focal64Kubeadm
+  box: ubuntu/focal64
+  playbooks_prefix: './playbooks'
+  scripts_prefix: './scripts'
+  network: private
+  private_ip_address: 192.168.56.227
+  memory: 4096
+  cpus: 2
+  install_go: never
+  install_docker: always
+  install_kubeadm: always
+  go_version: 1.17.9

@@ -1,0 +1,12 @@
+---
+configs:
+  name: focal64Go
+  box: ubuntu/focal64
+  playbooks_prefix: './playbooks'
+  scripts_prefix: './scripts'
+  memory: 4096
+  cpus: 2
+  install_go: always
+  install_docker: never
+  install_kubeadm: never
+  go_version: 1.17.9

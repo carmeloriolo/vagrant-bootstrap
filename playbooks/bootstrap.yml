@@ -1,0 +1,19 @@
+---
+- name: Bootstrap
+  become: true
+  hosts: all
+  tasks:
+    - name: "Install prerequisites"
+      ansible.builtin.apt:
+        name:
+          - git
+          - make
+          - tmux
+          - vim
+          - net-tools
+          - gcc
+          - htop
+          - apt-transport-https
+          - ca-certificates
+          - curl
+        state: present
